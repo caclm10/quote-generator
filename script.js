@@ -27,15 +27,36 @@ const tweetQuote = () => {
 
 // Get quotes from API
 const getQuote = async () => {
-    toggleLoading()
     const url = `https://api.quotable.io/random`
 
-    const resp = await fetch(url)
+    toggleLoading()
+    try {
+        const resp = await fetch(url)
 
-    quote = await resp.json()
+        if (!resp.ok) throw resp
 
+        quote = await resp.json()
+
+        if (twitterBtn.disabled) twitterBtn.disabled = false
+    } catch (error) {
+        switch (error.status) {
+            case undefined:
+                quote = {
+                    content: 'Something went wrong, please try again later.',
+                    author: ''
+                }
+                break;
+
+            default:
+                quote = {
+                    content: error.statusText + '.',
+                    author: error.status
+                }
+                break;
+        }
+        twitterBtn.disabled = true
+    }
     printQuote()
-
     toggleLoading()
 }
 
