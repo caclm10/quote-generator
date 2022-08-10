@@ -1,3 +1,25 @@
+:root {
+    --primary: #d13268;
+    --primary-dark: #9a003e;
+    --primary-light: #ff6996;
+    --primary-contrast: #fff;
+    --primary-rgb: 209, 50, 104;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
 html {
     box-sizing: border-box;
 }
@@ -52,6 +74,7 @@ main {
     height: var(--quote-icon-size);
     margin-right: 1rem;
     float: left;
+    color: white;
 }
 
 .quote-text {
@@ -73,4 +96,55 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.twitter-icon {
+    transition: color 0.5s;
+    pointer-events: none;
+}
+
+.twitter-button:hover .twitter-icon {
+    color: #38a1f3;
+}
+
+button {
+    --main: var(--primary);
+    --main-dark: var(--primary-dark);
+    --contrast: var(--primary-contrast);
+    --main-rgb: var(--primary-rgb);
+    --rounded: 8px;
+    --bg-color: var(--main);
+    --color: var(--contrast);
+    --border-color: transparent;
+    outline: none;
+    border: 0px solid var(--border-color);
+    border-radius: var(--rounded);
+    background-color: var(--bg-color);
+    color: var(--color);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: calc(0.5rem + 1px) calc(0.75rem + 1px);
+    cursor: pointer;
+    transition: background 0.5s, border 0.5s;
+}
+
+button:hover {
+    --bg-color: var(--main-dark);
+    --border-color: var(--main-dark);
+}
+
+.ripple {
+    --ripple-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--ripple-color);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: ripple 1s linear infinite;
 }
