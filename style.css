@@ -81,7 +81,7 @@ main {
     color: white;
 }
 
-.quote-text {
+.quote-content {
     font-size: 1.875rem;
 }
 
@@ -89,11 +89,13 @@ main {
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: flex-end;
+    font-size: 1rem;
 }
 
 .author-name {
-    font-size: 1.5rem;
+    display: inline-flex;
     font-style: italic;
+    align-items: center;
 }
 
 .actions {
