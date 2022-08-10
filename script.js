@@ -19,7 +19,7 @@ function listenCloseNotif() {
 }
 
 function runButton() {
-    const buttons = document.querySelectorAll(`button`)
+    const buttons = document.querySelectorAll(`.button`)
 
     for (const button of buttons) {
         const box = button.getBoundingClientRect()
@@ -70,6 +70,7 @@ async function generateQuote() {
 
         document.getElementById(`author-name`).textContent = author
         document.getElementById(`quote-content`).textContent = content
+        document.getElementById(`twitter-button`).href = `https://twitter.com/intent/tweet?text=${content} - ${author}`
     } catch (error) {
         showNotif(error.message, 'error')
     }

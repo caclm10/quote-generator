@@ -113,7 +113,7 @@ main {
     color: #38a1f3;
 }
 
-button {
+.button {
     --main: var(--primary);
     --main-dark: var(--primary-dark);
     --contrast: var(--primary-contrast);
@@ -140,7 +140,7 @@ button {
     transition: background 0.5s, border 0.5s;
 }
 
-button:hover {
+.button:hover {
     --bg-color: var(--main-dark);
     --border-color: var(--main-dark);
 }
@@ -190,10 +190,6 @@ button:hover {
     background-color: transparent;
     position: absolute;
     right: 0px;
-}
-
-.close-button .ripple {
-    display: none;
 }
 
 .loader-container {
