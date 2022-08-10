@@ -1,0 +1,36 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(39, 39, 39);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.7);
+}
+
+.container {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+main {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+}
